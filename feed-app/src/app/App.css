@@ -1,7 +1,18 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 .App {
   text-align: center;
 }
 
+.logo {
+  float: left;
+  width: 120px;
+  height: 31px;
+  margin: 16px 24px 16px 0;
+  background: rgba(255, 255, 255, 0.3);
+}
 .App-logo {
   height: 40vmin;
   pointer-events: none;
@@ -35,4 +46,21 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+
+
+body {
+  background-color: #fafafa;
+}
+
+.ant-layout-header {
+  height: 79px;
+  line-height: 77px;
+  background-color: #fff;
+  border-bottom: 1px solid #e8e8e8;
+  padding: 0;
+}
+.app-content {
+  background-color: #fafafa;
 }
