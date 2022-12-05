@@ -1,11 +1,14 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useContext } from "react";
 import "./header.css";
 import { Link } from "react-router-dom";
+import { AppContext } from "../../context/applicationContext";
 
 const Header = props => {
-  const logout = () => {
-    //logout funtionality goes here
-  };
+  const appContext = useContext(AppContext);
+
+const logout = () => {
+    appContext.logout();
+};
   return (
     <>
       <header className="sticky top-0 z-50">
