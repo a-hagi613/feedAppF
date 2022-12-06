@@ -6,7 +6,7 @@ import { UserOutlined, LockOutlined } from "@ant-design/icons";
 import "./loginform.css";
 import { loginApi } from "../../util/ApiUtil";
 import { AppContext } from "../../context/applicationContext";
-
+import { signInWithGoogle } from "../../Firebase/firebase";
 const FormItem = Form.Item;
 
 const LoginForm = () => {
@@ -71,6 +71,17 @@ const LoginForm = () => {
           className="login-form-button bg-indigo-600"
         >
           Login
+        </Button>
+      </FormItem>
+      <FormItem>
+        <Button
+          type="primary"
+          htmlType="submit"
+          size="large"
+          className="signup-form-button bg-indigo-600"
+          // onClick={signInWithGoogle()}
+        >
+          Sign In With Google
         </Button>
       </FormItem>
     </Form>
