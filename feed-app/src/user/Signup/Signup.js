@@ -15,16 +15,7 @@ import {
 
 import { signUpApi } from "../../util/ApiUtil";
 
-import { signInWithGoogle } from "../../Firebase/firebase";
-import { initializeApp } from "firebase/app";
-import {
-  getAuth,
-  GoogleAuthProvider,
-  signInWithPopup,
-  createUserWithEmailAndPassword,
-} from "firebase/auth";
-import { getDatabase, ref, set } from "firebase/database";
-import { app } from "../../Firebase/firebase";
+import SignUpFB from "../../Firebase/firebaseSignIn";
 
 const FormItem = Form.Item;
 
@@ -134,27 +125,6 @@ const validatePassword = password => {
   }
 };
 
-// firebase signin
-// const signUpFB = () =>{
-// const auth = getAuth(app);
-// const [emails, setEmails] = useState("");
-// const [passwords, setPasswords] = useState("");
-
-// const signUpEmailPassword = async () => {
-//   try {
-//     const userCredential = await createUserWithEmailAndPassword(
-//       auth,
-//       emails,
-//       passwords
-//     );
-//     console.log(userCredential.user);
-//     console.log('User successfully created account');
-//   } catch (err) {
-//     console.log("ERROR! Account cant be created" + err);
-//   }
-// };
-// }
-
 const Signup = () => {
   let navigate = useNavigate();
 
@@ -229,7 +199,7 @@ const Signup = () => {
         </Row>
         <Row type="flex" justify="center">
           <Col pan={24}>
-            <Form onFinish={onFinish} className="signup-form">
+            {/* <Form onFinish={onFinish} className="signup-form">
               <FormItem
                 validateStatus={name.validateStatus}
                 help={name.errorMsg}
@@ -300,42 +270,8 @@ const Signup = () => {
                   Signup
                 </Button>
               </FormItem>
-            </Form>
-
-            {/* second form
-            <div
-            // onFinish={loginEmailPassword}
-            // className="signup-form"
-            >
-              <Input
-                className="inputEmail"
-                size="large"
-                // name="email"
-                placeholder="Email"
-                // value={email.value}
-                onChange={e => setEmail(e.target.value)}
-              />
-
-              <Input
-                className="inputPassword"
-                size="large"
-                // name="password"
-                type="password"
-                placeholder="Password"
-                // value={password.value}
-                onChange={e => setPassword(e.target.value)}
-              />
-
-              <Button
-                type="primary"
-                // htmlType="submit"
-                size="large"
-                className="signup-form-button bg-indigo-600"
-                onClick={signUpFB()}
-              >
-                Sign Up With Firebase
-              </Button>
-            </div> */}
+            </Form> */}
+            <SignUpFB />
           </Col>
         </Row>
       </div>
