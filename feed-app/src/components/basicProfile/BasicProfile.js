@@ -1,14 +1,18 @@
 import React, { useEffect, useState } from "react";
 import "./basicprofile.css";
 import * as Yup from "yup";
+import toast from "react-hot-toast";
 
 import { Formik, Form } from "formik";
 
-import LoadingIndicator from "../LoadingIndicator/LoadingIndicator";
+import LoadingIndicator from "../../components/LoadingIndicator/LoadingIndicator";
 import FormField from "../formField/FormField";
 
-const BasicProfile = () => {
-  const [isLoading, setIsLoading] = useState(false);
+import { getBasicProfileApi, updateBasicProfileApi } from "../../util/ApiUtil";
+
+const BasicProfile = ({ currentUser }) => {
+  const [isSubmit, setIsSubmit] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
 
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -26,13 +30,50 @@ const BasicProfile = () => {
     loadBasicProfile();
   }, []);
 
-  const loadBasicProfile = () => {
-    //load profile api code goes here
+  const loadBasicProfile = async () => {
+    const apiResponse = await getBasicProfileApi(
+      currentUser.token,
+      currentUser.username
+    );
+    if (apiResponse) {
+      setPosition(apiResponse.position);
+      setLanguages(apiResponse.languages);
+      setCompany(apiResponse.company);
+      setEducation(apiResponse.education);
+      setCompanyAddress(apiResponse.companyAddress);
+      setCertification(apiResponse.certification);
+      setInterests(apiResponse.interests);
+      setSkills(apiResponse.skills);
+      setExperience(apiResponse.experience);
+    }
+    setIsLoading(false);
   };
 
-  const onFormSubmit = values => {
-    //save profile api code goes here
-    console.log(values);
+  const onFormSubmit = async (values) => {
+    if (!isSubmit) {
+      setIsSubmit(true);
+
+      //We are not passing name and email to the api. This is a stretch goal you have to implement in the project which will update name and email as well.
+      const apiResponse = await updateBasicProfileApi(
+        currentUser.token,
+        currentUser.username,
+        values.position,
+        values.company,
+        values.skills,
+        values.certification,
+        values.companyAddress,
+        values.interests,
+        values.experience,
+        values.education,
+        values.languages
+      );
+      if (apiResponse) {
+        toast("Profile has been updated.");
+      } else {
+        toast("Failed to update your profile. Please try again later.");
+      }
+      setIsSubmit(false);
+    }
   };
 
   if (isLoading) {
@@ -127,7 +168,7 @@ const BasicProfile = () => {
               </div>
             </div>
             <div className="w-full mt-5 ">
-              <button className="block uppercase mx-auto shadow bg-indigo-500 hover:bg-indigo-700 focus:shadow-outline focus:outline-none text-white text-xs py-3 px-10 rounded font-bold">
+              <button type="submit" className="block uppercase mx-auto shadow bg-indigo-500 hover:bg-indigo-700 focus:shadow-outline focus:outline-none text-white text-xs py-3 px-10 rounded font-bold">
                 Save
               </button>
             </div>
