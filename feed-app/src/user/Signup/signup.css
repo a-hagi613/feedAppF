@@ -4,8 +4,10 @@
     margin: 0 auto;
     margin-top: 40px;
     padding: 50px 50px 0px 50px;
-    border: 1px solid #e1e0e0;
-    background-color: #fff;
+    border: 2px solid #001529;
+    border-radius: 1pc;
+
+    background-color: white;
     font-size: 32px;
     font-weight: 700;
   }
@@ -16,13 +18,31 @@
     max-width: 420px;
     margin: 0 auto;
     margin: 0 auto;
-    margin-top: 10px;
-    padding: 20px;
-    border: 1px solid #e1e0e0;
-    background-color: #fff;
-    color: #999;
+    margin-top: 15px;
+    padding: 10px;
+    /* border: 2px solid rgb(79 70 229);;
+    border-radius: 1pc; */
+    background-color: white;
+    
   }
-  
+  .login-hr{
+    color:#001529;
+    border: 1pc;
+  }
+
+  .login-link-container p {
+    color: #001529;;
+    font-size: x-large;
+  }  
+
+  .login-link-route{
+    color:  red !important;
+    font-size: x-large;
+    margin-left: 5px !important;
+    text-decoration: underline !important;
+  }
+
+
   .login-link-container a {
     margin-left: 5px;
     font-weight: bold;
@@ -39,8 +59,27 @@
   
   .logo-container {
     margin-bottom: 50px;
+    color: #001529;
+    font-size: x-large;
+
   }
   
   .signup-container img {
     width: 200px;
+  }
+
+  .main-container{
+    display: flex;
+    align-items: center;
+    background-color: white !important;
+    margin-bottom: 2pc !important;
+
+  }
+
+  .ant-footer{
+    font-weight: 700 !important;
+  }
+
+  body{
+    background-color: white !important;
   }

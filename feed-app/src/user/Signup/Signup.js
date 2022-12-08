@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "./signup.css";
 import toast from "react-hot-toast";
 import { Form, Input, Button, Row, Col } from "antd";
+
 import { Link, useNavigate } from "react-router-dom";
 import {
   NAME_MIN_LENGTH,
@@ -16,6 +17,10 @@ import {
 import { signUpApi } from "../../util/ApiUtil";
 
 import SignUpFB from "../../Firebase/firebaseSignIn";
+
+import { Breadcrumb, Layout, Menu, theme } from "antd";
+
+const { Header, Content, Footer } = Layout;
 
 const FormItem = Form.Item;
 
@@ -188,97 +193,141 @@ const Signup = () => {
   };
 
   return (
-    <React.Fragment>
-      <div className="signup-container">
-        <Row type="flex" justify="center">
-          <Col pan={24}>
-            <div className="logo-container">
-              <span>Feed App - Signup</span>
-            </div>
-          </Col>
-        </Row>
-        <Row type="flex" justify="center">
-          <Col pan={24}>
-            {/* <Form onFinish={onFinish} className="signup-form">
-              <FormItem
-                validateStatus={name.validateStatus}
-                help={name.errorMsg}
-                hasFeedback
-                name="name"
-              >
-                <Input
-                  size="large"
+    <Layout className="layout">
+      {/* <React.Fragment> */}
+
+      <Header>
+        <img
+          alt="logo"
+          className="logo"
+          src={require("../../images/feedAppLogo.jpg")}
+          width="30p"
+          height="15"
+        />
+        <Menu theme="dark" mode="horizontal" />
+      </Header>
+      <Content>
+      <div className="main-container">
+        <img
+          alt="main landing page img"
+          src={require("../../images/8271062_5551.jpg")}
+          width="750p"
+          height="75"
+        />
+
+        <div className="signup-container">
+          <Row type="flex" justify="center">
+            <Col pan={24}>
+              <div className="logo-container">
+                <span>Feed App - Signup</span>
+              </div>
+            </Col>
+          </Row>
+          <Row type="flex" justify="center">
+            <Col pan={24}>
+              <Form onFinish={onFinish} className="signup-form">
+                <FormItem
+                  validateStatus={name.validateStatus}
+                  help={name.errorMsg}
+                  hasFeedback
                   name="name"
-                  placeholder="Name"
-                  value={name.value}
-                  onChange={event => handleInputChange(event, validateName)}
-                />
-              </FormItem>
-              <FormItem
-                validateStatus={email.validateStatus}
-                help={email.errorMsg}
-                hasFeedback
-                name="email"
-              >
-                <Input
-                  className="inputEmail"
-                  size="large"
-                  name="email"
-                  placeholder="Email"
-                  value={email.value}
-                  onChange={event => handleInputChange(event, validateEmail)}
-                />
-              </FormItem>
-              <FormItem
-                validateStatus={username.validateStatus}
-                help={username.errorMsg}
-                hasFeedback
-                name="username"
-              >
-                <Input
-                  size="large"
-                  name="username"
-                  placeholder="Username"
-                  value={username.value}
-                  onChange={event => handleInputChange(event, validateUsername)}
-                />
-              </FormItem>
-              <FormItem
-                validateStatus={password.validateStatus}
-                help={password.errorMsg}
-                hasFeedback
-                name="password"
-              >
-                <Input
-                  className="inputPassword"
-                  size="large"
-                  name="password"
-                  type="password"
-                  placeholder="Password"
-                  value={password.value}
-                  onChange={event => handleInputChange(event, validatePassword)}
-                />
-              </FormItem>
-              <FormItem>
-                <Button
-                  type="primary"
-                  htmlType="submit"
-                  size="large"
-                  className="signup-form-button bg-indigo-600"
-                  disabled={isFormInvalid()}
                 >
-                  Signup
-                </Button>
-              </FormItem>
-            </Form> */}
-            <SignUpFB />
-          </Col>
-        </Row>
+                  <Input
+                    size="large"
+                    name="name"
+                    placeholder="Name"
+                    value={name.value}
+                    onChange={event => handleInputChange(event, validateName)}
+                  />
+                </FormItem>
+                <FormItem
+                  validateStatus={email.validateStatus}
+                  help={email.errorMsg}
+                  hasFeedback
+                  name="email"
+                >
+                  <Input
+                    className="inputEmail"
+                    size="large"
+                    name="email"
+                    placeholder="Email"
+                    value={email.value}
+                    onChange={event => handleInputChange(event, validateEmail)}
+                  />
+                </FormItem>
+                <FormItem
+                  validateStatus={username.validateStatus}
+                  help={username.errorMsg}
+                  hasFeedback
+                  name="username"
+                >
+                  <Input
+                    size="large"
+                    name="username"
+                    placeholder="Username"
+                    value={username.value}
+                    onChange={event =>
+                      handleInputChange(event, validateUsername)
+                    }
+                  />
+                </FormItem>
+                <FormItem
+                  validateStatus={password.validateStatus}
+                  help={password.errorMsg}
+                  hasFeedback
+                  name="password"
+                >
+                  <Input
+                    className="inputPassword"
+                    size="large"
+                    name="password"
+                    type="password"
+                    placeholder="Password"
+                    value={password.value}
+                    onChange={event =>
+                      handleInputChange(event, validatePassword)
+                    }
+                  />
+                </FormItem>
+                <FormItem>
+                  <Button
+                    type="primary"
+                    htmlType="submit"
+                    size="large"
+                    className="signup-form-button bg-indigo-600"
+                    disabled={isFormInvalid()}
+                  >
+                    Signup
+                  </Button>
+                </FormItem>
+              </Form>
+              {/* <SignUpFB /> */}
+            </Col>
+          </Row>
+          {/* </div> */}
+          {/* <br /> */}
+          <div className="login-link-container">
+            <hr className="login-hr" />
+            <center>
+              <p>
+                Have an account?
+                <Link to="/login" className="login-link-route">
+                  Login!
+                </Link>
+              </p>
+            </center>
+            <br/><br/> 
+          </div>
+        </div>
       </div>
-      <div className="login-link-container">
-        Have an account? <Link to="/login">Login</Link>
-      </div>
-    </React.Fragment>
+      </Content>
+
+      <Footer className="ant-footer" style={{ textAlign: "center" }}>
+        ©FeedApp Team 2
+      </Footer>
+
+      {/* </React.Fragment> */}
+    </Layout>
   );
 };
 
