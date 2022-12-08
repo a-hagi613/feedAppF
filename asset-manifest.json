@@ -1,0 +1,17 @@
+{
+  "files": {
+    "main.css": "/static/css/main.181a92dc.css",
+    "main.js": "/static/js/main.86ee0b3f.js",
+    "static/js/496.1f406b27.chunk.js": "/static/js/496.1f406b27.chunk.js",
+    "static/media/8271062_5551.jpg": "/static/media/8271062_5551.c895f292fd1cdf6bea13.jpg",
+    "static/media/feedAppLogo.jpg": "/static/media/feedAppLogo.a0cf3ee6e3509b2a9378.jpg",
+    "index.html": "/index.html",
+    "main.181a92dc.css.map": "/static/css/main.181a92dc.css.map",
+    "main.86ee0b3f.js.map": "/static/js/main.86ee0b3f.js.map",
+    "496.1f406b27.chunk.js.map": "/static/js/496.1f406b27.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.181a92dc.css",
+    "static/js/main.86ee0b3f.js"
+  ]
+}
