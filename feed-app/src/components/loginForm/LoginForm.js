@@ -68,12 +68,12 @@ const LoginForm = () => {
           type="primary"
           htmlType="submit"
           size="large"
-          className="login-form-button bg-indigo-600"
+          className="login-form-button bg-slate-900"
         >
           Login
         </Button>
       </FormItem>
-      <FormItem>
+      {/* <FormItem>
         <Button
           type="primary"
           htmlType="submit"
@@ -83,7 +83,7 @@ const LoginForm = () => {
         >
           Sign In With Google
         </Button>
-      </FormItem>
+      </FormItem> */}
     </Form>
   );
 };

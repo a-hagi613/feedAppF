@@ -294,7 +294,7 @@ const Signup = () => {
                     type="primary"
                     htmlType="submit"
                     size="large"
-                    className="signup-form-button bg-indigo-600"
+                    className="signup-form-button  bg-slate-900"
                     disabled={isFormInvalid()}
                   >
                     Signup

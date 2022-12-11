@@ -59,8 +59,9 @@ const Login = ({ currentUser, isAuthenticated }) => {
                 <br />  <Link to="/signup">Signup!</Link>
               </p>
             </div>
-            <br />
+            <br />  <br />
           </div>
+          
         </div>
        
       </Content>

@@ -168,7 +168,7 @@ const BasicProfile = ({ currentUser }) => {
               </div>
             </div>
             <div className="w-full mt-5 ">
-              <button type="submit" className="block uppercase mx-auto shadow bg-indigo-500 hover:bg-indigo-700 focus:shadow-outline focus:outline-none text-white text-xs py-3 px-10 rounded font-bold">
+              <button type="submit" className="block uppercase mx-auto shadow bg-slate-900 hover:bg-indigo-700 focus:shadow-outline focus:outline-none text-white text-xs py-3 px-10 rounded font-bold">
                 Save
               </button>
             </div>

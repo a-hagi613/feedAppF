@@ -14,12 +14,12 @@ const logout = () => {
       <header className="sticky top-0 z-50">
         <nav
           id="header"
-          className="w-screen z-30 bg-white shadow-lg border-b border-indigo-700"
+          className="w-screen z-30 bg-slate-900 shadow-lg border-b border-white"
         >
           <div className="w-full flex items-center justify-between mt-0 px-6 py-2">
             <div className="flex items-centerw-auto w-full " id="menu">
               <nav>
-                <ul className="flex items-center justify-between text-base text-indigo-700 ">
+                <ul className="flex items-center justify-between text-base text-white ">
                   <li>
                     <p className="inline-block no-underline hover:text-black font-bold text-lg py-2 px-4 lg:-ml-2">
                       Feed App
